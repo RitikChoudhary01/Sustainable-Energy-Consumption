@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary / OS files
+*.tmp
+~$*
+.~lock.*#
+.DS_Store
+Thumbs.db
+
+# Environments / IDE
+.vscode/
+.idea/
+*.venv
+env/
+venv/
+
+# Backup and nested duplicate folders
+DAV_Project_Report_Template_backup.docx
+energy_dashboard_streamlit/
