@@ -463,7 +463,7 @@ all_countries = sorted(df_full["country"].unique().tolist())
 all_regions = sorted(df_full["region"].unique().tolist())
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 5. SIDEBAR CONTROLS & VIVA DEFENSE GUIDE
+# 5. SIDEBAR CONTROLS
 # ─────────────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("""
@@ -516,30 +516,6 @@ with st.sidebar:
         default=[],
         placeholder="Choose countries (empty = all)"
     )
-
-    st.markdown("---")
-    # VIVA QUICK REFERENCE CHEAT SHEET FOR THE STUDENT
-    with st.expander("🎓 Presentation & Viva Quick Notes", expanded=False):
-        st.markdown("""
-        **1. What is Project #10?**
-        - *Sustainable Energy Consumption Dashboard* answering *"How can energy usage be optimized?"*
-        
-        **2. How can energy usage be optimized?**
-        - **Supply**: Transition fossil power plants to clean renewables (solar, wind, hydro).
-        - **Demand**: Lower Energy Intensity (produce more GDP per unit of energy).
-        - **Grid**: Cut transmission line losses with smart grids.
-        - **Cooking**: Replace biomass/wood with clean electric fuels.
-        
-        **3. What does Energy Intensity mean?**
-        - Megajoules (MJ) consumed per $ of GDP. **Lower is better!** Highly developed economies have low energy intensity.
-        
-        **4. Dataset & Cleaning Details (100% Clean):**
-        - **Scope:** 174 sovereign countries, 3,624 records (2000–2020), **0 missing values (0 NaNs)**.
-        - **Pruned 25 Unrecoverable Rows:** Dropped Tuvalu (21 years missing 100% power generation data) and 4 island states with >35% missingness.
-        - **Mode Imputation (0.0):** Applied to nuclear power (over 85% nations have zero nuclear plants) and international clean energy aid flows.
-        - **Mean Imputation:** Applied to symmetric features (clean cooking access, renewable energy share).
-        - **Median Imputation:** Applied to skewed features (fossil/renew TWh, CO2, intensity, GDP) to avoid outlier distortion from giants like China and USA.
-        """)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 6. COHORT FILTERING & DATA CALCULATIONS
