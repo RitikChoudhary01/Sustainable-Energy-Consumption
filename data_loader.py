@@ -7,11 +7,13 @@ import os
 import pandas as pd
 import numpy as np
 
-CSV_PATH = os.path.join(
-    os.path.dirname(__file__),
-    "energy_dashboard_streamlit",
-    "global-data-on-sustainable-energy.csv"
-)
+CSV_CANDIDATES = [
+    os.path.join(os.path.dirname(__file__), "cleaned_sustainable_energy.csv"),
+    os.path.join(os.path.dirname(__file__), "global-data-on-sustainable-energy.csv"),
+    os.path.join(os.path.dirname(__file__), "energy_dashboard_streamlit", "cleaned_sustainable_energy.csv"),
+    os.path.join(os.path.dirname(__file__), "energy_dashboard_streamlit", "global-data-on-sustainable-energy.csv"),
+]
+CSV_PATH = next((p for p in CSV_CANDIDATES if os.path.exists(p)), CSV_CANDIDATES[1])
 
 # Short column aliases used throughout the app
 COL = {
@@ -41,8 +43,34 @@ COL = {
 
 def load_raw() -> pd.DataFrame:
     df = pd.read_csv(CSV_PATH)
+    if "country" in df.columns:
+        rev_map = {
+            "country": COL["entity"],
+            "year": COL["year"],
+            "access_elec": COL["elec_access"],
+            "clean_fuels": COL["clean_fuels"],
+            "renew_cap_pc": COL["renew_cap"],
+            "fin_flows": COL["fin_flows"],
+            "renew_share": COL["renew_share"],
+            "fossil_twh": COL["fossil_twh"],
+            "nuclear_twh": COL["nuclear_twh"],
+            "renew_twh": COL["renew_twh"],
+            "lowcarbon_pct": COL["lowcarbon"],
+            "energy_pc": COL["energy_pc"],
+            "intensity": COL["intensity"],
+            "co2_kt": COL["co2"],
+            "renew_pe_pct": COL["renew_pct_pe"],
+            "gdp_growth": COL["gdp_growth"],
+            "gdp_pc": COL["gdp_pc"],
+            "density": COL["density"],
+            "land_area": COL["land"],
+            "latitude": COL["lat"],
+            "longitude": COL["lon"]
+        }
+        df = df.rename(columns=rev_map)
     # Clean density column
-    df[COL["density"]] = pd.to_numeric(df[COL["density"]], errors="coerce")
+    if COL["density"] in df.columns:
+        df[COL["density"]] = pd.to_numeric(df[COL["density"]], errors="coerce")
     return df
 
 

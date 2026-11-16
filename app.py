@@ -382,10 +382,12 @@ def clean_chart(fig, title="", height=400, show_legend=True):
 # 4. ROBUST DATA INGESTION
 # ─────────────────────────────────────────────────────────────────────────────
 CANDIDATE_PATHS = [
+    Path(__file__).parent / "cleaned_sustainable_energy.csv",
     Path(__file__).parent / "global-data-on-sustainable-energy.csv",
+    Path(__file__).parent / "energy_dashboard_streamlit" / "cleaned_sustainable_energy.csv",
     Path(__file__).parent / "energy_dashboard_streamlit" / "global-data-on-sustainable-energy.csv",
+    Path(r"C:\Users\choud\Downloads\energy_dashboard_streamlit\cleaned_sustainable_energy.csv"),
     Path(r"C:\Users\choud\Downloads\energy_dashboard_streamlit\global-data-on-sustainable-energy.csv"),
-    Path(r"C:\Users\choud\Downloads\energy_dashboard_streamlit\energy_dashboard_streamlit\global-data-on-sustainable-energy.csv"),
 ]
 
 def resolve_csv():
