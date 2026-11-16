@@ -12,7 +12,7 @@
 | Speaker | Role | Slides Covered | Core Responsibility |
 | :--- | :--- | :--- | :--- |
 | **Speaker 1** | Project Lead / Context & Problem | **Slide 1 & Slide 2** | Introduction, curiosity question framing, the Decarbonization Paradox (+144% clean vs +48% CO2). |
-| **Speaker 2** | Data Analyst / Methodology & Proof | **Slide 3 & Slide 4** | 176-nation data pipeline, cleaning & IQR bounds, Decoupling Law ($r = -0.389$), and clean cooking gap. |
+| **Speaker 2** | Data Analyst / Methodology & Proof | **Slide 3 & Slide 4** | 174-nation clean data pipeline, cleaning & IQR bounds, Decoupling Law ($r = -0.389$), and clean cooking gap. |
 | **Speaker 3** | Systems Engineer / Solutions & Viva | **Slide 5 & Slide 6** | The 4 Optimization Pillars, Waterfall Abatement Model, Streamlit architecture, defense conclusion & Q&A. |
 
 ---
@@ -37,7 +37,7 @@ Our team comprises myself, **[Your Name]**, alongside my teammates **[Speaker 2 
 Throughout this semester, our research was driven by one central curiosity directive assigned to our project:  
 👉 **‘How can energy usage be optimized?’**
 
-To answer this question not with generic theories, but with empirical mathematical proof, we analyzed a harmonized multi-decade global dataset spanning **176 sovereign entities**, **20 continuous years from 2000 to 2019**, and **over 3,600 standardized observations** tracking 21 key energy, economic, and environmental indicators. 
+To answer this question not with generic theories, but with empirical mathematical proof, we analyzed a harmonized multi-decade global dataset spanning **174 sovereign entities**, **20 continuous years from 2000 to 2019**, and **over 3,600 standardized observations** tracking 21 key energy, economic, and environmental indicators. 
 
 Before we show you how energy can be optimized, we must first examine why conventional clean energy strategies have fallen short."
 
@@ -75,12 +75,16 @@ To explain how we engineered and validated the data behind these findings, I now
 To ensure our analysis was academically rigorous, we established a multi-tier data pipeline adhering to strict data science protocols.
 
 **1. Data Provenance & Scope:**  
-We harmonized datasets from the **World Bank, the International Energy Agency (IEA), and Our World in Data**, covering 176 sovereign nations across 20 continuous years. 
+We harmonized datasets from the **World Bank, the International Energy Agency (IEA), and Our World in Data**, covering 174 sovereign nations across 21 continuous years (2000–2020), totaling 3,624 clean records. 
 
-**2. Data Cleaning & Integrity:**  
-Longitudinal datasets from emerging economies often suffer from reporting gaps. Rather than dropping rows—which would bias our study by eliminating developing countries—we applied **entity-level forward and backward longitudinal interpolation**. This preserved 100% of our sovereign entities with **zero row loss**. 
+**2. Rigorous Data Cleaning & Statistical Imputation:**  
+To guarantee academic integrity, we executed a domain-aware data cleaning pipeline:
+- **Uncleanable Row Pruning (25 rows):** We pruned Tuvalu (21 years lacking 100% of power generation telemetry) and 4 island states with >35% missingness where energy mix cannot be computed mathematically.
+- **Mode Imputation (0.0):** Applied to nuclear generation (over 85% of global nations possess zero nuclear plants) and international clean energy aid flows to avoid generating phantom numbers.
+- **Mean Imputation:** Applied to symmetric variables (|skew| <= 1.0), such as clean cooking access (skew: -0.51) and renewable energy share.
+- **Median Imputation:** Applied to heavily skewed features (skew > 1.0) like fossil/renewable TWh, CO2 emissions, and GDP per capita to ensure robustness against extreme outlier economies (e.g., China and USA).
 
-We normalized 21 raw headers into clean identifiers, converted raw kilotonnes of CO2 to standard Megatonnes, and applied **Interquartile Range (IQR) outlier diagnostics** with a 1.5 multiplier to cap sensor spikes in primary energy intensity without distorting authentic national scales.
+This eliminated all 6,978 raw missing cells, resulting in a **100% clean dataset with zero remaining NaNs** saved to cleaned_sustainable_energy.csv.
 
 **3. Engineered Analytical Features:**  
 We formulated three critical metrics directly in Python:
@@ -153,7 +157,7 @@ When we model an achievable policy target—retiring **20% of thermal coal** (-5
 "To put these mathematical models into the hands of decision-makers, we engineered the **EnergyIQ Interactive Analytics Platform**:
 
 - **Modern Architecture:** Built natively using Python, Streamlit, and Plotly.
-- **Sub-Second Responsiveness:** We leveraged Streamlit’s `@st.cache_data` in-memory caching to allow instantaneous filtering across 176 nations and 20 years without lag.
+- **Sub-Second Responsiveness:** We leveraged Streamlit’s `@st.cache_data` in-memory caching to allow instantaneous filtering across 174 nations and 20 years without lag.
 - **Streamlined for Transparency:** We eliminated black-box mathematical bloat to ensure that every metric and slider can be defended clearly before evaluators.
 - **Production Status:** Our entire codebase, complete documentation, 25-page project report, and presentation slides are already version-controlled and pushed to GitHub.
 
