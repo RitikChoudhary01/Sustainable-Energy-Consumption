@@ -6,15 +6,15 @@
 
 ---
 
-## 👥 ROLES AT A GLANCE
-- **Speaker 1 (Slides 1 & 2):** Introduction, Team Welcome, and the Global Decarbonization Paradox.
-- **Speaker 2 (Slides 3 & 4):** Clean Data Pipeline (Mode/Mean/Median) and Visual Proof.
-- **Speaker 3 (Slides 5 & 6):** The 4 Optimization Pillars, Live Dashboard, and Conclusion.
+## 👥 ROLES & SLIDE ALLOCATION AT A GLANCE
+- **Speaker 1 (Slides 1, 2 & 3):** Introduction, Team Roles, and The Global Decarbonization Paradox.
+- **Speaker 2 (Slides 4 & 5):** Clean Data Pipeline (Mode/Mean/Median) and Visual Proof.
+- **Speaker 3 (Slides 6 & 7):** The 4 Optimization Pillars, Live Dashboard, and Conclusion.
 
 ---
 
-## 🎙️ SPEAKER 1: Introduction & The Problem
-*(Target Time: ~1.5 Minutes | Slides 1 & 2)*
+## 🎙️ SPEAKER 1: Introduction, Team & The Problem
+*(Target Time: ~2 Minutes | Slides 1, 2 & 3)*
 
 #### 📍 [SLIDE 1: Title & Research Question]
 *(Smile, make eye contact with professors)*
@@ -29,15 +29,34 @@ Our main curiosity question is:
 
 Most people assume optimizing energy just means building more solar panels. But our 20-year empirical research reveals that true optimization requires structural grid changes.
 
-Let's look at Slide 2 to see the real problem."
+Let's look at Slide 2 to introduce our team roles."
 
 ---
 
-#### 📍 [SLIDE 2: The Global Paradox]
+#### 📍 [SLIDE 2: Team Members & Role Responsibilities]
+*(Point to the three role cards)*
+
+**Speaker 1:**  
+"On Slide 2, you can see our interdisciplinary 3-person team:
+
+1. **Speaker 1 (Myself, Ritik Choudhary) – Domain & Policy Analyst:**  
+   I led the research question formulation, investigated the global decarbonization paradox, and analyzed historical macro energy trends.
+
+2. **Speaker 2 ([Team Member 2 Name]) – Data Scientist & Preprocessing Specialist:**  
+   Led our data cleaning pipeline, pruned unrecoverable noisy rows, applied Mode, Mean, and Median statistical imputation, and verified statistical correlations.
+
+3. **Speaker 3 ([Team Member 3 Name]) – Systems Architect & Dashboard Developer:**  
+   Formulated the 4-pillar optimization framework, modeled the carbon abatement waterfall simulation, and built our interactive Streamlit analytics platform.
+
+Now, let's examine Slide 3 to see the real global paradox."
+
+---
+
+#### 📍 [SLIDE 3: The Global Decarbonization Paradox]
 *(Point to the two big numbers on the slide)*
 
 **Speaker 1:**  
-"Look at these two contrasting numbers on Slide 2:
+"Look at these two contrasting numbers on Slide 3:
 1. Between 2000 and 2019, clean renewable power surged by **+144%**—more than doubling worldwide.
 2. Yet, during that exact same period, global CO2 emissions **rose by +48%**!
 
@@ -51,9 +70,9 @@ Now, I will hand over to **[Speaker 2]** to explain our data methodology and vis
 ---
 
 ## 🎙️ SPEAKER 2: Clean Data & Visual Evidence
-*(Target Time: ~2 Minutes | Slides 3 & 4)*
+*(Target Time: ~2 Minutes | Slides 4 & 5)*
 
-#### 📍 [SLIDE 3: Data Cleaning Pipeline]
+#### 📍 [SLIDE 4: Data Architecture & Cleaning Pipeline]
 *(Speaker 2 steps forward and nods to Speaker 1)*
 
 **Speaker 2:**  
@@ -73,15 +92,15 @@ Raw real-world data had missing values, so we cleaned it with strict statistical
 
 Our final cleaned dataset has **3,624 records and zero missing values**.
 
-Let's look at Slide 4 for the visual evidence."
+Let's look at Slide 5 for the visual evidence."
 
 ---
 
-#### 📍 [SLIDE 4: Empirical Visual Insights]
+#### 📍 [SLIDE 5: Empirical Visual Insights]
 *(Point to the charts)*
 
 **Speaker 2:**  
-"On Slide 4, our charts prove two key facts:
+"On Slide 5, our charts prove two key facts:
 
 1. **Economic Decoupling:**  
    Our data shows a negative correlation between energy intensity and GDP per capita. Developing nations often waste high energy per dollar of GDP. But advanced economies prove that wealth can grow while energy waste shrinks. They create more value with less energy.
@@ -95,9 +114,9 @@ Now, **[Speaker 3]** will present our 4-pillar solution and live dashboard."
 ---
 
 ## 🎙️ SPEAKER 3: Solutions, Dashboard & Viva Defense
-*(Target Time: ~2 Minutes | Slides 5 & 6)*
+*(Target Time: ~2 Minutes | Slides 6 & 7)*
 
-#### 📍 [SLIDE 5: The Four Pillars of Energy Optimization]
+#### 📍 [SLIDE 6: The Four Pillars of Energy Optimization]
 *(Speaker 3 steps forward)*
 
 **Speaker 3:**  
@@ -116,7 +135,7 @@ Let's look at our final slide."
 
 ---
 
-#### 📍 [SLIDE 6: Dashboard Architecture & Conclusion]
+#### 📍 [SLIDE 7: Dashboard Architecture & Conclusion]
 *(Point to the architecture cards)*
 
 **Speaker 3:**  
